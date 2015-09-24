@@ -33,9 +33,11 @@ shinyServer(
                              ylim=c(range_bottom,range_upper),
                              col="blue")
                         
-                        draw.ellipse(mean(newdata.1), mean(newdata.2), 
-                                     a = 3*sd(newdata.1), b = 3*sd(newdata.2), angle = 0, deg = TRUE)
-                       
+                       # draw.ellipse(mean(newdata.1), mean(newdata.2), 
+                #                     a = 3*sd(newdata.1), b = 3*sd(newdata.2), angle = 0, deg = TRUE)
+                 draw.ellipse(mean(newdata.1), mean(newdata.2), 
+                                     a = 3*sd(data.1), b = 3*sd(data.2), angle = 360-angle, deg = TRUE)
+                
                         text((range_bottom+range_upper)/2,range_upper, paste("sd1 = ", sd(newdata.1), "sd2= ",sd(newdata.2), "angle= ",angle))
                         
   
